@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SizeCollectionViewCell" id="gTV-IL-0wX" customClass="SizeCollectionViewCell" customModule="Wlif" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="28"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="28"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5PR-zF-GtR">
+                        <rect key="frame" x="0.0" y="0.0" width="72" height="28"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450gm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znb-Ch-6MI">
+                                <rect key="frame" x="19.000000000000004" y="8" width="34.333333333333343" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Znb-Ch-6MI" firstAttribute="centerY" secondItem="5PR-zF-GtR" secondAttribute="centerY" id="ABb-nm-RPA"/>
+                            <constraint firstItem="Znb-Ch-6MI" firstAttribute="centerX" secondItem="5PR-zF-GtR" secondAttribute="centerX" id="fIw-wJ-GZV"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="5PR-zF-GtR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6Jl-bQ-mNo"/>
+                <constraint firstAttribute="trailing" secondItem="5PR-zF-GtR" secondAttribute="trailing" constant="8" id="ZZP-Il-sva"/>
+                <constraint firstItem="5PR-zF-GtR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dZ7-AK-0X0"/>
+                <constraint firstAttribute="bottom" secondItem="5PR-zF-GtR" secondAttribute="bottom" id="jTT-f5-i81"/>
+            </constraints>
+            <size key="customSize" width="183" height="50"/>
+            <connections>
+                <outlet property="sizeLabel" destination="Znb-Ch-6MI" id="fmf-7Y-PSk"/>
+            </connections>
+            <point key="canvasLocation" x="219.08396946564883" y="20.422535211267608"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,6 @@
+DerivedData/
+build/
+*.xcworkspace/xcuserdata/
+Pods/
+Carthage/Build/
+*.xcuserstate

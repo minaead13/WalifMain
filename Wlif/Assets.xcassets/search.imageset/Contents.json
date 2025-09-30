@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "_x37_7_Essential_Icons.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "_x37_7_Essential_Icons@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "_x37_7_Essential_Icons@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
