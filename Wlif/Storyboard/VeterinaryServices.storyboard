@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -926,34 +927,60 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8j9-k9-8VZ">
-                                <rect key="frame" x="24" y="502" width="272" height="42"/>
-                                <color key="backgroundColor" systemColor="labelColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="VW1-8E-3Kx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="tintColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Go to Home"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="18"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="didTapGoToHome:" destination="jIc-YZ-ql7" eventType="touchUpInside" id="eac-u7-vOY"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-3u-5Rx">
+                                <rect key="frame" x="24" y="449" width="272" height="95"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8j9-k9-8VZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="42"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="VW1-8E-3Kx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="tintColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Go to Home"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapGoToHome:" destination="jIc-YZ-ql7" eventType="touchUpInside" id="eac-u7-vOY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HF5-gt-Gty">
+                                        <rect key="frame" x="0.0" y="53" width="272" height="42"/>
+                                        <color key="backgroundColor" red="0.87450980392156863" green="1" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="8aE-VS-dYE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="tintColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Order Details">
+                                            <color key="titleColor" name="171717"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapOrderDetails:" destination="jIc-YZ-ql7" eventType="touchUpInside" id="Rhn-pw-daG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3eO-7E-Poh"/>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.96862745098039216" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="3eO-7E-Poh" firstAttribute="bottom" secondItem="8j9-k9-8VZ" secondAttribute="bottom" constant="24" id="Ao5-Yk-Uvz"/>
-                            <constraint firstItem="8j9-k9-8VZ" firstAttribute="leading" secondItem="3eO-7E-Poh" secondAttribute="leading" constant="24" id="Etm-Te-b8x"/>
-                            <constraint firstItem="3eO-7E-Poh" firstAttribute="trailing" secondItem="8j9-k9-8VZ" secondAttribute="trailing" constant="24" id="H14-Tx-DHX"/>
+                            <constraint firstItem="3eO-7E-Poh" firstAttribute="trailing" secondItem="hnf-3u-5Rx" secondAttribute="trailing" constant="24" id="8hB-tL-5qc"/>
                             <constraint firstItem="ZAq-a7-qqa" firstAttribute="centerX" secondItem="3eO-7E-Poh" secondAttribute="centerX" id="gPM-dk-Wf2"/>
+                            <constraint firstItem="3eO-7E-Poh" firstAttribute="bottom" secondItem="hnf-3u-5Rx" secondAttribute="bottom" constant="24" id="mZV-CE-jGa"/>
                             <constraint firstItem="ZAq-a7-qqa" firstAttribute="centerY" secondItem="3eO-7E-Poh" secondAttribute="centerY" id="nHS-Mb-93A"/>
+                            <constraint firstItem="hnf-3u-5Rx" firstAttribute="leading" secondItem="3eO-7E-Poh" secondAttribute="leading" constant="24" id="v5k-Bp-QUV"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -968,6 +995,9 @@
         <image name="back" width="44" height="44"/>
         <image name="call.dark" width="19" height="19"/>
         <image name="yellowRing" width="170" height="170"/>
+        <namedColor name="171717">
+            <color red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

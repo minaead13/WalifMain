@@ -21,11 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func rootViewController() {
-//        let controller = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//        let nav = UINavigationController(rootViewController: controller)
+        let controller = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        let nav = UINavigationController(rootViewController: controller)
        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let nav = storyboard.instantiateViewController(withIdentifier: "loginVC") as! UINavigationController
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let nav = storyboard.instantiateViewController(withIdentifier: "loginVC") as! UINavigationController
        
         
         window?.rootViewController = nav

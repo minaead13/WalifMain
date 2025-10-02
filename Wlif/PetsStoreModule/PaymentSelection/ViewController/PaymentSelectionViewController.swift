@@ -28,7 +28,7 @@ class PaymentSelectionViewController: UIViewController {
     
     func bind() {
         viewModel.onWalletFetched = { [weak self] wallet in
-            self?.walletTotalLabel.text = "\("SR".localized) \(wallet?.balance ?? "")"
+            self?.walletTotalLabel.text = "\(wallet?.balance ?? "")"
         }
         
         viewModel.isLoading.bind { [weak self] isLoading in

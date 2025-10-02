@@ -21,4 +21,11 @@ class ConfirmOrderVC: UIViewController {
             navigationController?.popToViewController(firstViewController, animated: true)
         }
     }
+    
+    @IBAction func didTapOrderDetails(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Orders", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "OrderHistoryViewController") as! OrderHistoryViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
