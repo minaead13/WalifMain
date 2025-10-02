@@ -98,7 +98,7 @@ class NetworkManager {
                 // Append images
                 for (index, image) in images.enumerated() {
                     if let imageData = image.jpegData(compressionQuality: 0.7) {
-                        multipartFormData.append(imageData, withName: "images[]", fileName: "image\(index).jpg", mimeType: "image/jpeg")
+                        multipartFormData.append(imageData, withName: "attachments[]", fileName: "image\(index).jpg", mimeType: "image/jpeg")
                     }
                 }
                 
