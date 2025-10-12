@@ -13,6 +13,7 @@ class OrderHistoryViewController: UIViewController {
     @IBOutlet weak var ordersTableView: UITableView!
     @IBOutlet weak var headerView: HeaderView!
     @IBOutlet weak var bookTableView: UITableView!
+    @IBOutlet weak var backButton: UIButton!
     
     let viewModel = OrderHistoryViewModel()
     
@@ -25,6 +26,9 @@ class OrderHistoryViewController: UIViewController {
         viewModel.getOrders()
         bookTableView.isHidden = true
         setupHeaderActions()
+        if viewModel.isFromSuccessScreen {
+            backButton.isHidden = true
+        }
     }
     
     func setTableView() {

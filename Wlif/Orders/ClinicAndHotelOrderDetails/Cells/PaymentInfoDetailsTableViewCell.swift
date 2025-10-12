@@ -28,18 +28,18 @@ class PaymentInfoDetailsTableViewCell: UITableViewCell {
         let isVeterinary = slogan == .veterinaryServices
         
         paymentMethodLabel.text = payment.paymentGatway
-        deliveryValueOrTaxLabel.text = isVeterinary ? payment.tax : payment.deliveryValue
-        totalLabel.text = payment.total
+        deliveryValueOrTaxLabel.text = isVeterinary ? "\(payment.tax ?? 0)" : payment.deliveryValue
+        totalLabel.text = "\(payment.total ?? 0)"
         deliveryOrTaxTitleLabel.text = isVeterinary ? "Tax".localized : "Delivery value".localized
     }
     
     func configure(payment: StoreOrderModel) {
         paymentMethodLabel.text = payment.paymentGatway
         deliveryValueOrTaxLabel.text = payment.deliveryValue
-        totalLabel.text = payment.total
+        totalLabel.text = "\(payment.total ?? 0)"
         deliveryOrTaxTitleLabel.text = "Delivery value".localized
         taxStack.isHidden = false
         stackView.isHidden = false
-        taxLabel.text = payment.tax
+        taxLabel.text = "\(payment.tax ?? 0)"
     }
 }

@@ -11,6 +11,7 @@ class ClinicAndHotelOrderDetailsViewModel {
     var id: Int?
     var isLoading: Observable<Bool> = Observable(false)
     var slogan: Services?
+    var isFromSuccessScreen: Bool = false
     
     var orderDetails: OrderDetailsModel? {
         didSet {

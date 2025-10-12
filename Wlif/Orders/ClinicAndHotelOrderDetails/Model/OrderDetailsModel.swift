@@ -24,7 +24,9 @@ struct OrderDetailsModel: Codable {
     var statusValue: Int?
     var paymentType: String?
     var paymentGatway: String?
-    var deliveryValue, subtotal, tax, total: String?
+    var isRated: Bool?
+    var deliveryValue: String?
+    var subtotal, tax, total: Int?
     var createdAt: String?
 
     enum CodingKeys: String, CodingKey {
@@ -46,6 +48,7 @@ struct OrderDetailsModel: Codable {
         case statusValue = "status_value"
         case paymentType = "payment_type"
         case paymentGatway = "payment_gatway"
+        case isRated = "is_rated"
         case deliveryValue = "delivery_value"
         case subtotal, tax, total
         case createdAt = "created_at"

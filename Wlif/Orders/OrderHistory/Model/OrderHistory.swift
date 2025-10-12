@@ -32,7 +32,9 @@ struct OrderData: Codable {
     var merchantRate: Int?
     var status: String?
     var statusValue: Int?
-    var subtotal, tax, total: String?
+    var paid: Bool?
+    var subtotal: Int?
+    var tax, total: Double?
     var itemsCount: Int?
     var createdAt: String?
 
@@ -45,7 +47,7 @@ struct OrderData: Codable {
         case merchantRate = "merchant_rate"
         case status
         case statusValue = "status_value"
-        case subtotal, tax, total
+        case paid, subtotal, tax, total
         case itemsCount = "items_count"
         case createdAt = "created_at"
     }
@@ -61,7 +63,8 @@ struct ClinicAndHotelOrderHistory: Codable {
     var merchantRate: Int?
     var serviceType, status: String?
     var statusValue: Int?
-    var subtotal, tax, total: String?
+    var isRated: Bool?
+    var subtotal, tax, total: Int?
     var entryDate, exitDate: String?
     var createdAt: String?
 
@@ -75,6 +78,7 @@ struct ClinicAndHotelOrderHistory: Codable {
         case serviceType = "service_type"
         case status
         case statusValue = "status_value"
+        case isRated = "is_rated"
         case subtotal, tax, total
         case entryDate = "entry_date"
         case exitDate = "exit_date"

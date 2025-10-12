@@ -17,6 +17,7 @@ class OrderHistoryViewModel {
     ]
     var selectedIndex: Int = 0
     var isLoading: Observable<Bool> = Observable(false)
+    var isFromSuccessScreen: Bool = false
 
     var orderHistory: OrderHistory? {
         didSet {

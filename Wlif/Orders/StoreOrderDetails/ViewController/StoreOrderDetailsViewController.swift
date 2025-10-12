@@ -11,6 +11,7 @@ class StoreOrderDetailsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: HeaderView!
+    @IBOutlet weak var ratingBtn: UIButton!
     
     let viewModel = StoreOrderDetailsViewModel()
     
@@ -30,7 +31,9 @@ class StoreOrderDetailsViewController: UIViewController {
     }
     
     func bind() {
-        viewModel.onOrderDetailsFetched = { [weak self] services in
+        viewModel.onOrderDetailsFetched = { [weak self] orderDetails in
+            let shouldShowRatingButton = (orderDetails?.statusValue == 3 && orderDetails?.isRated == false)
+            self?.ratingBtn.isHidden = !shouldShowRatingButton
             self?.tableView.reloadData()
         }
         
@@ -67,6 +70,16 @@ class StoreOrderDetailsViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func didTapRatingBtn(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "OrderRatingViewController") as! OrderRatingViewController
+        vc.viewModel.orderID = viewModel.orderDetails?.id
+        vc.viewModel.isFromStore = true
+        vc.viewModel.completionHandler = { [weak self] in
+            self?.viewModel.getOrderDetails()
+        }
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
+    }
     
 }
 

@@ -222,4 +222,12 @@ struct Urls {
         return "order/payment"
     }
     
+    //MARK: - Rate
+    static var rate: String {
+        return "rate"
+    }
+    
+    static var addRate: String {
+        return "\(rate)/add"
+    }
 }

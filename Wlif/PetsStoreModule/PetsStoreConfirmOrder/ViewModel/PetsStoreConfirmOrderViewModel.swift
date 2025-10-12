@@ -18,13 +18,13 @@ class PetsStoreConfirmOrderViewModel {
     var selectedMethod: PaymentMethod = .online
     var isLoading: Observable<Bool> = Observable(false)
     
-    var order: CartItems? {
+    var order: CreatedOrder? {
         didSet {
             self.onOrderConfirmed?(order)
         }
     }
         
-    var onOrderConfirmed: ((CartItems?) -> Void)?
+    var onOrderConfirmed: ((CreatedOrder?) -> Void)?
     
     var cart: CartModel? {
         didSet {
@@ -34,7 +34,7 @@ class PetsStoreConfirmOrderViewModel {
     
     var onCartFetched: ((CartModel?) -> Void)?
     
-    func addStoreOrder(completion: ((Result<CartItems, Error>) -> Void)? = nil) {
+    func addStoreOrder(completion: ((Result<CreatedOrder, Error>) -> Void)? = nil) {
         self.isLoading.value = true
 
         var params = [
@@ -42,6 +42,7 @@ class PetsStoreConfirmOrderViewModel {
             "lon": "\(LocationUtil.load()?.lat ?? "")",
             "address_name": "\(LocationUtil.load()?.address ?? "")",
             "payment_type": selectedMethod == .online ? "3" : "2",
+            "merchant_id": "\(cart?.items?.first?.merchantId ?? 0)"
         ] as [String: Any]
         
         if selectedMethod == .online {
@@ -49,7 +50,7 @@ class PetsStoreConfirmOrderViewModel {
         }
         
                 
-        NetworkManager.instance.request(Urls.storeOrder, parameters: params, method: .post, type: CartItems.self) { [weak self] (baseModel, message) in
+        NetworkManager.instance.request(Urls.storeOrder, parameters: params, method: .post, type: CreatedOrder.self) { [weak self] (baseModel, message) in
             self?.isLoading.value = false
 
             if let data = baseModel?.data {
@@ -104,7 +105,7 @@ class PetsStoreConfirmOrderViewModel {
             "status": "\(status)"
         ] as [String: Any]
         
-        let url = Urls.payment + "/\(cart?.items?.first?.merchantId ?? 0))"
+        let url = Urls.payment + "/\(order?.orderID ?? 0)"
         NetworkManager.instance.request(url, parameters: params, method: .post, type: PaymentModel.self) { [weak self] (baseModel, message) in
             self?.isLoading.value = false
             

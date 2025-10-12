@@ -13,8 +13,9 @@ class HotelConfirmBookingViewModel {
     var payment: ApiPayment?
     var selectedMethod: PaymentMethod = .online
     var isLoading: Observable<Bool> = Observable(false)
+    var createdOrder: CreatedOrder?
     
-    func confirmHotelBooking(completion: ((Result<VetAppointmentModel, Error>) -> Void)? = nil) {
+    func confirmHotelBooking(completion: ((Result<CreatedOrder, Error>) -> Void)? = nil) {
         self.isLoading.value = true
         
         var params = [
@@ -31,10 +32,11 @@ class HotelConfirmBookingViewModel {
         }
         
         
-        NetworkManager.instance.request(Urls.petHotelBooking, parameters: params, method: .post, type: VetAppointmentModel.self) { [weak self] (baseModel, message) in
+        NetworkManager.instance.request(Urls.petHotelBooking, parameters: params, method: .post, type: CreatedOrder.self) { [weak self] (baseModel, message) in
             self?.isLoading.value = false
             
             if let data = baseModel?.data {
+                self?.createdOrder = data
                 completion?(.success(data))
             } else {
                 completion?(.failure(ErrorHelper.makeError(message ?? "Unknown error")))
@@ -58,7 +60,7 @@ class HotelConfirmBookingViewModel {
             "status": "\(status)"
         ] as [String: Any]
         
-        let url = Urls.payment + "/\(bookingInfo?.hotelId ?? 0)"
+        let url = Urls.payment + "/\(createdOrder?.orderID ?? 0)"
         NetworkManager.instance.request(url, parameters: params, method: .post, type: PaymentModel.self) { [weak self] (baseModel, message) in
             self?.isLoading.value = false
             

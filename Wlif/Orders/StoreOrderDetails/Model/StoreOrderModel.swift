@@ -17,15 +17,18 @@ struct StoreOrderModel: Codable {
     var merchantRate: Int?
     var status: String?
     var statusValue: Int?
-    var address: String?
+    var isRated, paid: Bool?
+    var address: Int?
     var lat, lon, addressName: String?
     var paymentType: Int?
     var paymentGatway: String?
-    var deliveryValue, subtotal, tax, total: String?
+    var deliveryValue: String?
+    var subtotal: Int?
+    var tax, total: Double?
     var itemsCount: Int?
     var createdAt: String?
     var items: [Item]?
-    var rate: Int?
+    var rate: Rate?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -36,7 +39,8 @@ struct StoreOrderModel: Codable {
         case merchantRate = "merchant_rate"
         case status
         case statusValue = "status_value"
-        case address, lat, lon
+        case isRated = "is_rated"
+        case paid,address, lat, lon
         case addressName = "address_name"
         case paymentType = "payment_type"
         case paymentGatway = "payment_gatway"
@@ -46,4 +50,11 @@ struct StoreOrderModel: Codable {
         case createdAt = "created_at"
         case items, rate
     }
+}
+
+
+// MARK: - Rate
+struct Rate: Codable {
+    var id, rate: Int?
+    var comment: String?
 }

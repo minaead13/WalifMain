@@ -123,6 +123,7 @@ class HotelConfirmBookingVC: UIViewController {
                     let vc = storyboard.instantiateViewController(withIdentifier: "ClinicAndHotelOrderDetailsVC") as! ClinicAndHotelOrderDetailsVC
                     vc.viewModel.id = data.orderId
                     vc.viewModel.slogan = .petHotel
+                    vc.viewModel.isFromSuccessScreen = true
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
                 
